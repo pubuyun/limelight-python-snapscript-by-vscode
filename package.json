@@ -9,15 +9,38 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:limelight.openPreview",
+    "onCommand:limelight.uploadCode",
+    "onLanguage:python"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "limelight-python-snapscript-by-vscode.helloWorld",
-        "title": "Hello World"
+        "command": "limelight.openPreview",
+        "title": "Open Limelight Preview"
+      },
+      {
+        "command": "limelight.uploadCode",
+        "title": "Upload Python Code to Limelight"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Limelight Python Snapscript",
+      "properties": {
+        "limelight.serverAddress": {
+          "type": "string",
+          "default": "http://172.28.0.1",
+          "description": "Limelight server address"
+        },
+        "limelight.autoUpdate": {
+          "type": "boolean",
+          "default": false,
+          "description": "Auto update python code on save"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run package",
@@ -30,18 +53,23 @@
     "lint": "eslint src",
     "test": "vscode-test"
   },
+  "dependencies": {
+    "@types/axios": "^0.14.4",
+    "axios": "^1.9.0",
+    "vsce": "^2.15.0"
+  },
   "devDependencies": {
-    "@types/vscode": "^1.100.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
+    "@types/vscode": "^1.100.0",
     "@typescript-eslint/eslint-plugin": "^8.31.1",
     "@typescript-eslint/parser": "^8.31.1",
-    "eslint": "^9.25.1",
-    "typescript": "^5.8.3",
-    "ts-loader": "^9.5.2",
-    "webpack": "^5.99.7",
-    "webpack-cli": "^6.0.1",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.5.2"
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1"
   }
 }

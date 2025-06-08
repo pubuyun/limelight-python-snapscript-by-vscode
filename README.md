@@ -1,71 +1,31 @@
-# limelight-python-snapscript-by-vscode README
+# Limelight Python Snapscript VSCode 插件
 
-This is the README for your extension "limelight-python-snapscript-by-vscode". After writing up a brief description, we recommend including the following sections.
+这是一个用于与 Limelight 服务器交互的 VSCode 插件，支持 Python 代码实时预览和上传功能。
 
-## Features
+## 功能特性
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- 实时预览 Limelight 视频流（端口 5800）
+- Python 代码一键上传到 Limelight 服务器
+- 支持保存时自动上传代码
+- 可配置 Limelight 服务器地址
 
-For example if there is an image subfolder under your extension project workspace:
+## 使用方法
 
-\!\[feature X\]\(images/feature-x.png\)
+1. 打开命令面板（Ctrl+Shift+P）
+2. 输入以下命令：
+   - `Limelight: Open Preview` - 打开视频预览窗口
+   - `Limelight: Upload Python Code` - 上传当前 Python 文件到 Limelight
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## 插件配置
 
-## Requirements
+在 VSCode 设置中可以配置以下选项：
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- `limelight.serverAddress`: Limelight 服务器地址（默认：http://172.28.0.1）
+- `limelight.autoUpdate`: 是否在保存 Python 文件时自动上传（默认：false）
 
-## Extension Settings
+## 使用提示
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+1. 确保 Limelight 服务器已经启动并且可以访问
+2. 视频预览窗口可以通过拖拽移动到任意位置
+3. 代码上传成功后会显示提示消息
+4. 如果开启自动上传，每次保存 Python 文件时都会自动上传到 Limelight 服务器
